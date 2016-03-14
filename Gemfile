@@ -33,6 +33,8 @@ group :development do
   gem 'web-console', '~> 2.0'
   #Here we install Rspec
   gem 'rspec-rails', '3.2.3'
+  gem 'bootstrap-sass', '~>3.3.4.1'
+  gem 'autoprefixer-rails', '~>5.2.0'
 
   gem 'spring'
   #Here we creat Test-Group then we install capybara inside it
