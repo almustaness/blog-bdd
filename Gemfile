@@ -27,13 +27,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
 
   gem 'byebug'
-end
-
-group :development do
 
   gem 'web-console', '~> 2.0'
   #Here we install Rspec
   gem 'rspec-rails', '3.2.3'
+  #We add Respec Guard
+  gem 'guard-rspec', require: false
+  #We add spring command 
+  gem 'spring-commands-rspec'
 
 
   gem 'spring'
