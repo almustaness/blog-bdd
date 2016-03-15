@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.6'
+gem 'bootstrap-sass', '~>3.3.4.1'
+gem 'autoprefixer-rails', '~>5.2.0'
 
 gem 'sqlite3'
 
@@ -22,7 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-
 group :development, :test do
 
   gem 'byebug'
@@ -33,8 +34,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   #Here we install Rspec
   gem 'rspec-rails', '3.2.3'
-  gem 'bootstrap-sass', '~>3.3.4.1'
-  gem 'autoprefixer-rails', '~>5.2.0'
+
 
   gem 'spring'
   #Here we creat Test-Group then we install capybara inside it
