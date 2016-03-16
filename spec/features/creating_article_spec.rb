@@ -9,7 +9,7 @@ RSpec.feature "Creating Articles" do
   #There is a scenario should be followed to use this feature. Here how it is:
   #The scenarion demonstrates a user creates an article
   scenario "A user creates a new article" do
-    #First, the user will visit a URL
+    #First, the user will visit the root URL
     visit "/"
     #Second, he will click on a link
     click_link "New Article"
@@ -23,8 +23,28 @@ RSpec.feature "Creating Articles" do
     expect(page).to have_content("Article has been created")
     #Seventh, he will expect to be redirected to the article's path he created 
     expect(page.current_path).to eq(articles_path)
+  end
+  
+  scenario "A user fails to create articles" do
+    #First, the user will visit the root URL
+    visit "/"
+    #Second, he will click on a link
+    click_link "New Article"
+    #Third, he will fill a textbox with empty string
+    fill_in "Title", with: ""
+    #Fourth, he will fill a textbox with empty string
+    fill_in "Body", with: ""
+    #Fifth, he will submit the article by clicking on submit button
+    click_button "Create Article"
+    #Sixth, he will expect to get a feedback message that the article is not valid
+    expect(page).to have_content("Article is not created")
+    #Seventh, he will expect error validation message because of empty string
+    expect(page).to have_content("Title cannot be empty")
+     #Seventh, he will expect error validation message because of empty string
+    expect(page).to have_content("Body cannot be empty")
     
   end
+  
 end
 
 
